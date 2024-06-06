@@ -1,3 +1,25 @@
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #000000, #222222, #404040); /* Replace with your desired gradient */
+  background-attachment: fixed;
+  width: 100%;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .App {
-  background: linear-gradient(to bottom, #000000, #222222, #404040);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
