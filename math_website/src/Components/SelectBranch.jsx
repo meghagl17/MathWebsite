@@ -3,14 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import ContextProvider from '../Context';
 
-function SelectBranch(operation) {
+function SelectBranch() {
     const navigate = useNavigate();
 
     const temp = useContext(ContextProvider);
-    // const currentOperation = temp.currentOperation;
     const setCurrentOperation = temp.setCurrentOperation;
 
-    const operationClicked = () => {
+    const operationClicked = (operation) => {
         setCurrentOperation(operation);
         navigate('/rules')
     }
