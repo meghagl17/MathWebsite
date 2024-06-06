@@ -5,17 +5,24 @@ import ContextProvider from '../Context';
 
 function Play() {
     const navigate = useNavigate();
-    const [num1, setNum1] = React.useState();
-    const [num2, setNum2] = React.useState();
+    const [num1, setNum1] = React.useState(0);
+    const [num2, setNum2] = React.useState(0);
+    const [correctAnswer, setCorrectAnswer] = React.useState(0);
 
 
     const temp = useContext(ContextProvider);
     const currentOperation = temp.currentOperation;
 
     const newAddNum = () => {
-        const num1 = Math.floor(Math.random() * 100) + 1;
-        const num2 = Math.floor(Math.random() * 100) + 1;
-        const correctAnswer = num1 + num2;
+        let newNum1 = Math.floor(Math.random() * 100) + 1;
+        let newNum2 = Math.floor(Math.random() * 100) + 1;
+        if(newNum1 < newNum2){
+            [newNum1, newNum2] = [newNum2, newNum1];
+        }
+        setNum1(newNum1);
+        setNum2(newNum2);
+        const correctAnswerVar = newNum1 + newNum2;
+        setCorrectAnswer(correctAnswerVar);
     }
 
     const submitClicked = () => {
@@ -26,6 +33,8 @@ function Play() {
 
     return (
         <div className="SelectBranch">
+            <p>Num 1: {num1}</p>
+            <p>Num 2: {num2}</p>
             <button onClick={() => submitClicked()}>submit</button>
         </div>
       );
