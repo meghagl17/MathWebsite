@@ -7,6 +7,9 @@ import Context from './Context'
 import Rules from './Components/Rules'
 import Play from './Components/Play'
 import Result from './Components/Result'
+import Navbar from './Components/Navbar'
+import { StyledEngineProvider } from '@mui/material/styles';
+
 
 function App() {
 
@@ -16,6 +19,9 @@ function App() {
 
     return (
       <div className="App">
+        <StyledEngineProvider injectFirst>
+          <Navbar />
+        </StyledEngineProvider>
           <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Home />} />
