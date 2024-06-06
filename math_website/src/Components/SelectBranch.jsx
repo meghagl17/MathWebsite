@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import ContextProvider from '../Context';
+import '../Styles/selectBranch.css'
 
 function SelectBranch() {
     const navigate = useNavigate();
@@ -16,10 +17,10 @@ function SelectBranch() {
 
     return (
         <div className="SelectBranch">
-            <button onClick={() => operationClicked('Addition')}>Addition</button>
-            <button onClick={() => operationClicked('Subtraction')}>Subtraction</button>
-            <button onClick={() => operationClicked('Multiplication')}>Multiplication</button>
-            <button onClick={() => operationClicked('Division')}>Division</button>
+            <button class="bubble" onClick={() => operationClicked('Addition')}>Addition</button>
+            <button class="bubble" onClick={() => operationClicked('Subtraction')}>Subtraction</button>
+            <button class="bubble" onClick={() => operationClicked('Multiplication')}>Multiplication</button>
+            <button class="bubble" onClick={() => operationClicked('Division')}>Division</button>
         </div>
       );
 }

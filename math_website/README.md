@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Sources: 
+set started button formatting: https://getcssscan.com/css-buttons-examples
+
+
+https://chatgpt.com/c/f9adaa5f-835e-43ff-b27a-3a809bc45e2b

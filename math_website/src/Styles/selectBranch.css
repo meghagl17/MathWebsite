@@ -1,0 +1,48 @@
+.SelectBranch{
+    display: flex;              /* Enable flexbox layout */
+    justify-content: center;    /* Center the rectangles horizontally */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bubble {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(173, 216, 230, 0.6) 60%, rgba(0, 191, 255, 0.3) 100%);
+    border-radius: 50%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.6),
+                0 10px 15px rgba(0, 0, 0, 0.2),
+                0 0 20px rgba(173, 216, 230, 0.5);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    animation: float 3s ease-in-out infinite;
+}
+
+.bubble::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), transparent 60%);
+    border-radius: 50%;
+    opacity: 0.7;
+}
