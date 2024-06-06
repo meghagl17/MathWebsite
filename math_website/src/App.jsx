@@ -6,10 +6,13 @@ import SelectBranch from './Components/SelectBranch'
 import Context from './Context'
 import Rules from './Components/Rules'
 import Play from './Components/Play'
+import Result from './Components/Result'
 
 function App() {
 
     const [currentOperation, setCurrentOperation] = React.useState('');
+    const [correctList, setCorrectList] = React.useState([]);
+    const [incorrectList, setIncorrectList] = React.useState([]);
 
     return (
       <div className="App">
@@ -25,8 +28,14 @@ function App() {
                 <Route path="/rules" element={<Rules />} />
                 <Route path="/play" element={
                   <Context.Provider
-                    value={{currentOperation}}>
+                    value={{currentOperation, correctList, setCorrectList, incorrectList, setIncorrectList}}>
                     <Play />
+                  </Context.Provider>
+                } />
+                <Route path="/result" element={
+                  <Context.Provider
+                    value={{correctList, setCorrectList, incorrectList, setIncorrectList}}>
+                    <Result />
                   </Context.Provider>
                 } />
               </Routes>
