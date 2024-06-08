@@ -7,7 +7,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, #000000, #222222, #404040); /* Replace with your desired gradient */
+  background: linear-gradient(to bottom, #000000, #222222, #404040); 
   background-attachment: fixed;
   width: 100%;
 }
