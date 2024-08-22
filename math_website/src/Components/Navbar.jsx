@@ -1,34 +1,42 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import { Box, Flex, Text, Button, useBreakpointValue } from '@chakra-ui/react';
+import { FaHome } from 'react-icons/fa';
+import { IconButton } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 export default function ButtonAppBar() {
+  const navigate = useNavigate();
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" style={{ backgroundColor: 'black' }} elevation={3}>
-        <Toolbar>
-          {/* <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton> */}
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Math4Fun
-          </Typography>
-          <Button color="inherit">GET STARTED</Button>
-          <Button color="inherit">ABOUT</Button>
-          <Button color="inherit">RULES</Button>
-        </Toolbar>
-      </AppBar>
+    <Box bg="blue.900" color="white" boxShadow="md" borderBottom="2px" borderColor="blue.700">
+      <Flex as="nav" align="center" justify="space-between" padding="1rem" maxW="1200px" mx="auto">
+        {/* Uncomment and use Chakra UI's `IconButton` and `HamburgerIcon` if needed */}
+        {/* {!isDesktop && (
+          <IconButton
+            icon={<HamburgerIcon />}
+            aria-label="Menu"
+            variant="outline"
+            colorScheme="whiteAlpha"
+          />
+        )} */}
+        <Text fontSize="xl" fontWeight="bold" letterSpacing="wider">
+          Math4Fun
+        </Text>
+        <Flex gap="6">
+        <Button
+      variant="link"
+      color="white"
+      _hover={{ textDecoration: 'underline' }}
+      leftIcon={<FaHome />}
+      fontSize="lg"
+      padding={0}
+      minWidth={0}
+      onClick={() => navigate('/')}
+    >
+      HOME
+    </Button>
+        </Flex>
+      </Flex>
     </Box>
   );
 }
