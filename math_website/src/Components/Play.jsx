@@ -134,39 +134,46 @@ function Play() {
 
     return (
         <Box
-            minH="100vh"
+            minH="95vh"
             bgGradient="linear(to-br, teal.400, blue.600)"
             color="white"
             textAlign="center"
-            p={5}
+            p={4} // Adjusted padding
             display="flex"
             alignItems="center"
             justifyContent="center"
             flexDirection="column"
         >
-            <Container maxW="container.sm" p={6} borderRadius="md" bg="whiteAlpha.900" boxShadow="2xl">
-                <VStack spacing={2} align="center">
-                    <Heading as="h1" size="xl" mb={4} color="teal.700">
+            <Container
+                maxW={{ base: "90%", md: "container.sm" }} // Responsive container width
+                p={4} // Adjusted padding
+                borderRadius="md"
+                bg="whiteAlpha.900"
+                boxShadow="2xl"
+            >
+                <VStack spacing={4} align="center"> {/* Increased spacing for better readability */}
+                    <Heading as="h1" size={{ base: "lg", md: "xl" }} mb={4} color="teal.700">
                         Solve the Problem
                     </Heading>
-                    <Text fontSize="lg" fontWeight="bold" color="teal.700">
+                    <Text fontSize={{ base: "md", md: "lg" }} fontWeight="bold" color="teal.700">
                         Time Left: {formatTime(timeLeft)}
                     </Text>
                     <Box
-                        p={6}
+                        p={4} // Adjusted padding
                         bg="teal.500"
                         color="white"
                         borderRadius="md"
                         boxShadow="lg"
                         textAlign="center"
                     >
-                        <Text fontSize="3xl" pl={5}>
+                        <Text fontSize={{ base: "2xl", md: "3xl" }} pl={2} /* Adjusted padding for smaller screens */
+                            >
                             {num1}
                         </Text>
-                        <Text fontSize="3xl" mb={2}>
+                        <Text fontSize={{ base: "2xl", md: "3xl" }} mb={2}>
                             {sign} {num2}
                         </Text>
-                        <Divider my={1} />
+                        <Divider my={2} /> {/* Increased margin for better spacing */}
                         <FormControl id="input">
                             <Input
                                 ref={inputRef}
@@ -183,13 +190,22 @@ function Play() {
                                 _focus={{ borderColor: 'teal.400' }}
                                 color="black"
                                 textAlign="center"
+                                fontSize={{ base: "md", md: "lg" }} // Responsive font size
                             />
                         </FormControl>
                         <HStack spacing={4} justify="center">
-                            <Button bg="red.700" _hover={{ bg: 'red.800', shadow: 'lg' }} color="white" size="lg" onClick={() => navigate('/result')}>Exit</Button>
+                            <Button
+                                bg="red.700"
+                                _hover={{ bg: 'red.800', shadow: 'lg' }}
+                                color="white"
+                                size={{ base: "md", lg: "lg" }} // Responsive button size
+                                onClick={() => navigate('/result')}
+                            >
+                                Exit
+                            </Button>
                             <Button
                                 colorScheme="teal"
-                                size="lg"
+                                size={{ base: "md", lg: "lg" }} // Responsive button size
                                 onClick={submitClicked}
                                 bg="teal.400"
                                 color="white"
@@ -205,7 +221,7 @@ function Play() {
                 </VStack>
             </Container>  
         </Box>
-      );
-}
+    );
+}    
 
 export default Play;

@@ -22,7 +22,7 @@ function Result() {
             color="white"
         >
             <VStack spacing={8} align="stretch">
-                <Heading as="h1" size="xl" textAlign="center" mb={6}>
+                <Heading as="h1" size="xl" textAlign="center" mb={4}>
                     Results
                 </Heading>
 
