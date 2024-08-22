@@ -20,7 +20,7 @@ export default function ButtonAppBar() {
           />
         )} */}
         <Text fontSize="xl" fontWeight="bold" letterSpacing="wider">
-          Math4Fun
+          MathQuest
         </Text>
         <Flex gap="6">
         <Button
