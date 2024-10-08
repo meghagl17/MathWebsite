@@ -8,6 +8,7 @@ import Rules from './Components/Rules';
 import Play from './Components/Play';
 import Result from './Components/Result';
 import Navbar from './Components/Navbar'; // Make sure Navbar is updated to use Chakra UI
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
     const [currentOperation, setCurrentOperation] = React.useState('');
@@ -52,6 +53,7 @@ function App() {
                 </Routes>
             {/* </BrowserRouter> */}
             </Router>
+            <Analytics />
         </div>
     );
 }
